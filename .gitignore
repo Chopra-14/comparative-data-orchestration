@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+
+# Dagster
+.tmp_dagster_home_*/
+dagster/history/
+dagster/*.db
+
+# Airflow logs
+airflow/logs/
