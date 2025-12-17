@@ -1,0 +1,42 @@
+[2025-12-16T17:14:36.625+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.load scheduled__2024-10-17T00:00:00+00:00 [queued]>
+[2025-12-16T17:14:36.657+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.load scheduled__2024-10-17T00:00:00+00:00 [queued]>
+[2025-12-16T17:14:36.659+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-16T17:14:36.719+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load> on 2024-10-17 00:00:00+00:00
+[2025-12-16T17:14:36.738+0000] {standard_task_runner.py:60} INFO - Started process 1386 to run task
+[2025-12-16T17:14:36.749+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'load', 'scheduled__2024-10-17T00:00:00+00:00', '--job-id', '4514', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp0d_mfyju']
+[2025-12-16T17:14:36.762+0000] {standard_task_runner.py:88} INFO - Job 4514: Subtask load
+[2025-12-16T17:14:37.066+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.load scheduled__2024-10-17T00:00:00+00:00 [running]> on host 3b89cfee50e9
+[2025-12-16T17:14:37.351+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-10-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-17T00:00:00+00:00'
+[2025-12-16T17:14:37.357+0000] {logging_mixin.py:188} INFO - [LOAD]
+[2025-12-16T17:14:37.811+0000] {logging_mixin.py:188} INFO -    user_id event_type            timestamp country
+0        1      login  2025-01-01T09:00:00      IN
+1        1      click  2025-01-01T09:05:00      IN
+2        1     logout  2025-01-01T09:15:00      IN
+3        3      login  2025-01-02T08:00:00      FR
+4        3      click  2025-01-02T08:05:00      FR
+[2025-12-16T17:14:37.813+0000] {logging_mixin.py:188} INFO - [LOAD] done
+[2025-12-16T17:14:37.814+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-12-16T17:14:37.839+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_***, task_id=load, execution_date=20241017T000000, start_date=20251216T171436, end_date=20251216T171437
+[2025-12-16T17:14:37.922+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-16T17:14:38.189+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-17T01:55:18.020+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.load scheduled__2024-10-17T00:00:00+00:00 [queued]>
+[2025-12-17T01:55:18.050+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.load scheduled__2024-10-17T00:00:00+00:00 [queued]>
+[2025-12-17T01:55:18.053+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-17T01:55:18.084+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load> on 2024-10-17 00:00:00+00:00
+[2025-12-17T01:55:18.105+0000] {standard_task_runner.py:60} INFO - Started process 3042 to run task
+[2025-12-17T01:55:18.112+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'load', 'scheduled__2024-10-17T00:00:00+00:00', '--job-id', '893', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp5l4wloyu']
+[2025-12-17T01:55:18.117+0000] {standard_task_runner.py:88} INFO - Job 893: Subtask load
+[2025-12-17T01:55:18.262+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.load scheduled__2024-10-17T00:00:00+00:00 [running]> on host 571e042550da
+[2025-12-17T01:55:18.719+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-10-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-17T00:00:00+00:00'
+[2025-12-17T01:55:18.722+0000] {logging_mixin.py:188} INFO - [LOAD]
+[2025-12-17T01:55:18.752+0000] {logging_mixin.py:188} INFO -    user_id event_type            timestamp country
+0        1      login  2025-01-01T09:00:00      IN
+1        1      click  2025-01-01T09:05:00      IN
+2        1     logout  2025-01-01T09:15:00      IN
+3        3      login  2025-01-02T08:00:00      FR
+4        3      click  2025-01-02T08:05:00      FR
+[2025-12-17T01:55:18.755+0000] {logging_mixin.py:188} INFO - [LOAD] done
+[2025-12-17T01:55:18.756+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-12-17T01:55:18.775+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_***, task_id=load, execution_date=20241017T000000, start_date=20251217T015518, end_date=20251217T015518
+[2025-12-17T01:55:18.851+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-17T01:55:18.886+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

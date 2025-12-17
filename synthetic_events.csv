@@ -1,0 +1,8 @@
+user_id,event_type,timestamp,country
+1,login,2024-01-01 10:00:00,IN
+1,click,2024-01-01 10:05:00,IN
+1,logout,2024-01-01 10:30:00,IN
+2,login,2024-01-01 11:00:00,US
+2,click,2024-01-01 11:10:00,US
+3,login,2024-01-02 09:00:00,UK
+3,click,2024-01-02 09:20:00,UK

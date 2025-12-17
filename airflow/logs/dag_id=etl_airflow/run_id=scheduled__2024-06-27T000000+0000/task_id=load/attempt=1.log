@@ -1,0 +1,75 @@
+[2025-12-16T17:12:15.614+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.load scheduled__2024-06-27T00:00:00+00:00 [queued]>
+[2025-12-16T17:12:15.671+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.load scheduled__2024-06-27T00:00:00+00:00 [queued]>
+[2025-12-16T17:12:15.673+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-16T17:12:15.736+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load> on 2024-06-27 00:00:00+00:00
+[2025-12-16T17:12:15.770+0000] {standard_task_runner.py:60} INFO - Started process 2013 to run task
+[2025-12-16T17:12:15.775+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'load', 'scheduled__2024-06-27T00:00:00+00:00', '--job-id', '4140', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpqv64jwaz']
+[2025-12-16T17:12:15.789+0000] {standard_task_runner.py:88} INFO - Job 4140: Subtask load
+[2025-12-16T17:12:16.038+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.load scheduled__2024-06-27T00:00:00+00:00 [running]> on host 3b89cfee50e9
+[2025-12-16T17:12:16.284+0000] {local_task_job_runner.py:121} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-12-16T17:12:16.305+0000] {process_utils.py:131} INFO - Sending 15 to group 2013. PIDs of all processes in the group: [2013]
+[2025-12-16T17:12:16.319+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 2013
+[2025-12-16T17:12:16.328+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-12-16T17:12:16.394+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2334, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode, session=session)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2470, in _execute_task_with_callbacks
+    RenderedTaskInstanceFields.delete_old_records(self.task_id, self.dag_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/renderedtifields.py", line 228, in delete_old_records
+    cls._do_delete_old_records(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/retries.py", line 91, in wrapped_function
+    for attempt in run_with_db_retries(max_retries=retries, logger=logger, **retry_kwargs):
+  File "/home/airflow/.local/lib/python3.8/site-packages/tenacity/__init__.py", line 347, in __iter__
+    do = self.iter(retry_state=retry_state)
+  File "/home/airflow/.local/lib/python3.8/site-packages/tenacity/__init__.py", line 314, in iter
+    return fut.result()
+  File "/usr/local/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/retries.py", line 100, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/renderedtifields.py", line 262, in _do_delete_old_records
+    session.execute(stmt)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1717, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1569, in _execute_clauseelement
+    compiled_sql, extracted_params, cache_hit = elem._compile_w_cache(
+  File "/home/airflow/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 505, in _compile_w_cache
+    def _compile_w_cache(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-12-16T17:12:16.470+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_***, task_id=load, execution_date=20240627T000000, start_date=20251216T171215, end_date=20251216T171216
+[2025-12-16T17:12:16.889+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 4140 for task load (Task received SIGTERM signal; 2013)
+[2025-12-16T17:12:16.917+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=2013, status='terminated', exitcode=1, started='17:12:14') (2013) terminated with exit code 1
+[2025-12-16T17:12:16.919+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 143
+[2025-12-16T17:12:16.972+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-17T01:53:23.793+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.load scheduled__2024-06-27T00:00:00+00:00 [queued]>
+[2025-12-17T01:53:23.820+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.load scheduled__2024-06-27T00:00:00+00:00 [queued]>
+[2025-12-17T01:53:23.822+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-17T01:53:23.859+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load> on 2024-06-27 00:00:00+00:00
+[2025-12-17T01:53:23.873+0000] {standard_task_runner.py:60} INFO - Started process 2008 to run task
+[2025-12-17T01:53:23.879+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'load', 'scheduled__2024-06-27T00:00:00+00:00', '--job-id', '567', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmph1o0azgx']
+[2025-12-17T01:53:23.885+0000] {standard_task_runner.py:88} INFO - Job 567: Subtask load
+[2025-12-17T01:53:24.076+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.load scheduled__2024-06-27T00:00:00+00:00 [running]> on host 571e042550da
+[2025-12-17T01:53:24.606+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-06-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-27T00:00:00+00:00'
+[2025-12-17T01:53:24.617+0000] {logging_mixin.py:188} INFO - [LOAD]
+[2025-12-17T01:53:24.676+0000] {logging_mixin.py:188} INFO -    user_id event_type            timestamp country
+0        1      login  2025-01-01T09:00:00      IN
+1        1      click  2025-01-01T09:05:00      IN
+2        1     logout  2025-01-01T09:15:00      IN
+3        3      login  2025-01-02T08:00:00      FR
+4        3      click  2025-01-02T08:05:00      FR
+[2025-12-17T01:53:24.677+0000] {logging_mixin.py:188} INFO - [LOAD] done
+[2025-12-17T01:53:24.682+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-12-17T01:53:24.710+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_***, task_id=load, execution_date=20240627T000000, start_date=20251217T015323, end_date=20251217T015324
+[2025-12-17T01:53:24.902+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-17T01:53:24.982+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

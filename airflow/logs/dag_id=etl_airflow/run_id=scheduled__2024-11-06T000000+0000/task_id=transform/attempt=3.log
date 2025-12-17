@@ -1,0 +1,44 @@
+[2025-12-17T04:53:50.139+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2024-11-06T00:00:00+00:00 [queued]>
+[2025-12-17T04:53:50.153+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2024-11-06T00:00:00+00:00 [queued]>
+[2025-12-17T04:53:50.154+0000] {taskinstance.py:2170} INFO - Starting attempt 3 of 3
+[2025-12-17T04:53:50.174+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): transform> on 2024-11-06 00:00:00+00:00
+[2025-12-17T04:53:50.183+0000] {standard_task_runner.py:60} INFO - Started process 4411 to run task
+[2025-12-17T04:53:50.189+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'transform', 'scheduled__2024-11-06T00:00:00+00:00', '--job-id', '1269', '--raw', '--subdir', 'DAGS_FOLDER/etl_***.py', '--cfg-path', '/tmp/tmpkjwnmoj7']
+[2025-12-17T04:53:50.192+0000] {standard_task_runner.py:88} INFO - Job 1269: Subtask transform
+[2025-12-17T04:53:50.312+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.transform scheduled__2024-11-06T00:00:00+00:00 [running]> on host b3426f05ac70
+[2025-12-17T04:53:50.674+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-11-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-06T00:00:00+00:00'
+[2025-12-17T04:53:50.677+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: transform_data() missing 1 required positional argument: 'df'
+[2025-12-17T04:53:50.686+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=etl_***, task_id=transform, execution_date=20241106T000000, start_date=20251217T045350, end_date=20251217T045350
+[2025-12-17T04:53:50.704+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 1269 for task transform (transform_data() missing 1 required positional argument: 'df'; 4411)
+[2025-12-17T04:53:50.723+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-17T04:53:50.776+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-17T07:59:03.890+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2024-11-06T00:00:00+00:00 [queued]>
+[2025-12-17T07:59:03.907+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2024-11-06T00:00:00+00:00 [queued]>
+[2025-12-17T07:59:03.910+0000] {taskinstance.py:2170} INFO - Starting attempt 3 of 3
+[2025-12-17T07:59:03.937+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): transform> on 2024-11-06 00:00:00+00:00
+[2025-12-17T07:59:03.948+0000] {standard_task_runner.py:60} INFO - Started process 4523 to run task
+[2025-12-17T07:59:03.953+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'transform', 'scheduled__2024-11-06T00:00:00+00:00', '--job-id', '1278', '--raw', '--subdir', 'DAGS_FOLDER/etl_***.py', '--cfg-path', '/tmp/tmp0mpwqs6e']
+[2025-12-17T07:59:03.958+0000] {standard_task_runner.py:88} INFO - Job 1278: Subtask transform
+[2025-12-17T07:59:04.087+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.transform scheduled__2024-11-06T00:00:00+00:00 [running]> on host 2a0de06c8905
+[2025-12-17T07:59:04.551+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-11-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-06T00:00:00+00:00'
+[2025-12-17T07:59:04.555+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: transform_data() missing 1 required positional argument: 'df'
+[2025-12-17T07:59:04.571+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=etl_***, task_id=transform, execution_date=20241106T000000, start_date=20251217T075903, end_date=20251217T075904
+[2025-12-17T07:59:04.597+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 1278 for task transform (transform_data() missing 1 required positional argument: 'df'; 4523)
+[2025-12-17T07:59:04.650+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-17T07:59:04.713+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

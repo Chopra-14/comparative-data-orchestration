@@ -1,0 +1,74 @@
+[2025-12-16T17:11:15.073+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2024-04-18T00:00:00+00:00 [queued]>
+[2025-12-16T17:11:15.121+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2024-04-18T00:00:00+00:00 [queued]>
+[2025-12-16T17:11:15.149+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-16T17:11:15.287+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): transform> on 2024-04-18 00:00:00+00:00
+[2025-12-16T17:11:15.319+0000] {standard_task_runner.py:60} INFO - Started process 1357 to run task
+[2025-12-16T17:11:15.330+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'transform', 'scheduled__2024-04-18T00:00:00+00:00', '--job-id', '3932', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpl4w6z00o']
+[2025-12-16T17:11:15.349+0000] {standard_task_runner.py:88} INFO - Job 3932: Subtask transform
+[2025-12-16T17:11:15.630+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.transform scheduled__2024-04-18T00:00:00+00:00 [running]> on host 3b89cfee50e9
+[2025-12-16T17:11:16.132+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-04-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-18T00:00:00+00:00'
+[2025-12-16T17:11:16.156+0000] {logging_mixin.py:188} INFO - [TRANSFORM]
+[2025-12-16T17:11:16.785+0000] {logging_mixin.py:188} INFO - [TRANSFORM] done
+[2025-12-16T17:11:16.791+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-12-16T17:11:16.832+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_***, task_id=transform, execution_date=20240418T000000, start_date=20251216T171115, end_date=20251216T171116
+[2025-12-16T17:11:16.974+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-16T17:11:17.212+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-17T01:52:04.945+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2024-04-18T00:00:00+00:00 [queued]>
+[2025-12-17T01:52:05.014+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2024-04-18T00:00:00+00:00 [queued]>
+[2025-12-17T01:52:05.024+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-17T01:52:05.149+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): transform> on 2024-04-18 00:00:00+00:00
+[2025-12-17T01:52:05.202+0000] {standard_task_runner.py:60} INFO - Started process 1294 to run task
+[2025-12-17T01:52:05.224+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'transform', 'scheduled__2024-04-18T00:00:00+00:00', '--job-id', '338', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpu12_2_af']
+[2025-12-17T01:52:05.237+0000] {standard_task_runner.py:88} INFO - Job 338: Subtask transform
+[2025-12-17T01:52:05.774+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.transform scheduled__2024-04-18T00:00:00+00:00 [running]> on host 571e042550da
+[2025-12-17T01:52:06.646+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-04-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-18T00:00:00+00:00'
+[2025-12-17T01:52:06.650+0000] {logging_mixin.py:188} INFO - [TRANSFORM]
+[2025-12-17T01:52:06.710+0000] {logging_mixin.py:188} INFO - [TRANSFORM] done
+[2025-12-17T01:52:06.715+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-12-17T01:52:06.760+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_***, task_id=transform, execution_date=20240418T000000, start_date=20251217T015204, end_date=20251217T015206
+[2025-12-17T01:52:06.858+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-17T01:52:06.988+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-17T04:45:59.374+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2024-04-18T00:00:00+00:00 [queued]>
+[2025-12-17T04:45:59.396+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2024-04-18T00:00:00+00:00 [queued]>
+[2025-12-17T04:45:59.398+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-17T04:45:59.442+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): transform> on 2024-04-18 00:00:00+00:00
+[2025-12-17T04:45:59.451+0000] {standard_task_runner.py:60} INFO - Started process 1585 to run task
+[2025-12-17T04:45:59.456+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'transform', 'scheduled__2024-04-18T00:00:00+00:00', '--job-id', '414', '--raw', '--subdir', 'DAGS_FOLDER/etl_***.py', '--cfg-path', '/tmp/tmpnbuuueoh']
+[2025-12-17T04:45:59.459+0000] {standard_task_runner.py:88} INFO - Job 414: Subtask transform
+[2025-12-17T04:45:59.607+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.transform scheduled__2024-04-18T00:00:00+00:00 [running]> on host b3426f05ac70
+[2025-12-17T04:46:00.007+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-04-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-18T00:00:00+00:00'
+[2025-12-17T04:46:00.011+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: transform_data() missing 1 required positional argument: 'df'
+[2025-12-17T04:46:00.024+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_***, task_id=transform, execution_date=20240418T000000, start_date=20251217T044559, end_date=20251217T044600
+[2025-12-17T04:46:00.051+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 414 for task transform (transform_data() missing 1 required positional argument: 'df'; 1585)
+[2025-12-17T04:46:00.120+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-17T04:46:00.198+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-17T07:39:20.050+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2024-04-18T00:00:00+00:00 [queued]>
+[2025-12-17T07:39:20.079+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2024-04-18T00:00:00+00:00 [queued]>
+[2025-12-17T07:39:20.081+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-17T07:39:20.120+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): transform> on 2024-04-18 00:00:00+00:00
+[2025-12-17T07:39:20.134+0000] {standard_task_runner.py:60} INFO - Started process 1643 to run task
+[2025-12-17T07:39:20.141+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'transform', 'scheduled__2024-04-18T00:00:00+00:00', '--job-id', '414', '--raw', '--subdir', 'DAGS_FOLDER/etl_***.py', '--cfg-path', '/tmp/tmppel4gfxu']
+[2025-12-17T07:39:20.146+0000] {standard_task_runner.py:88} INFO - Job 414: Subtask transform
+[2025-12-17T07:39:20.309+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.transform scheduled__2024-04-18T00:00:00+00:00 [running]> on host 2a0de06c8905
+[2025-12-17T07:39:20.757+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-04-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-18T00:00:00+00:00'
+[2025-12-17T07:39:20.761+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: transform_data() missing 1 required positional argument: 'df'
+[2025-12-17T07:39:20.779+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_***, task_id=transform, execution_date=20240418T000000, start_date=20251217T073920, end_date=20251217T073920
+[2025-12-17T07:39:20.898+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 414 for task transform (transform_data() missing 1 required positional argument: 'df'; 1643)
+[2025-12-17T07:39:20.960+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-17T07:39:21.005+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

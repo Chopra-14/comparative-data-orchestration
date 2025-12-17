@@ -1,0 +1,15 @@
+[2025-12-16T17:16:10.228+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2025-01-30T00:00:00+00:00 [queued]>
+[2025-12-16T17:16:10.248+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.transform scheduled__2025-01-30T00:00:00+00:00 [queued]>
+[2025-12-16T17:16:10.250+0000] {taskinstance.py:2170} INFO - Starting attempt 5 of 6
+[2025-12-16T17:16:10.280+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): transform> on 2025-01-30 00:00:00+00:00
+[2025-12-16T17:16:10.291+0000] {standard_task_runner.py:60} INFO - Started process 2476 to run task
+[2025-12-16T17:16:10.298+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'transform', 'scheduled__2025-01-30T00:00:00+00:00', '--job-id', '4862', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp88n941em']
+[2025-12-16T17:16:10.301+0000] {standard_task_runner.py:88} INFO - Job 4862: Subtask transform
+[2025-12-16T17:16:10.455+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.transform scheduled__2025-01-30T00:00:00+00:00 [running]> on host 3b89cfee50e9
+[2025-12-16T17:16:10.653+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2025-01-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-01-30T00:00:00+00:00'
+[2025-12-16T17:16:10.657+0000] {logging_mixin.py:188} INFO - [TRANSFORM]
+[2025-12-16T17:16:10.983+0000] {logging_mixin.py:188} INFO - [TRANSFORM] done
+[2025-12-16T17:16:10.984+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-12-16T17:16:11.003+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_***, task_id=transform, execution_date=20250130T000000, start_date=20251216T171610, end_date=20251216T171611
+[2025-12-16T17:16:11.074+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-16T17:16:11.123+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

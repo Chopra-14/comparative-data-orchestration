@@ -1,0 +1,13 @@
+[2025-12-16T16:40:24.090+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.extract scheduled__2024-10-14T00:00:00+00:00 [queued]>
+[2025-12-16T16:40:24.111+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.extract scheduled__2024-10-14T00:00:00+00:00 [queued]>
+[2025-12-16T16:40:24.112+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 3
+[2025-12-16T16:40:24.145+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): extract> on 2024-10-14 00:00:00+00:00
+[2025-12-16T16:40:24.162+0000] {standard_task_runner.py:60} INFO - Started process 1824 to run task
+[2025-12-16T16:40:24.172+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'extract', 'scheduled__2024-10-14T00:00:00+00:00', '--job-id', '884', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpidiaw816']
+[2025-12-16T16:40:24.177+0000] {standard_task_runner.py:88} INFO - Job 884: Subtask extract
+[2025-12-16T16:40:24.297+0000] {local_task_job_runner.py:121} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-12-16T16:40:24.304+0000] {process_utils.py:131} INFO - Sending 15 to group 1824. PIDs of all processes in the group: [1824]
+[2025-12-16T16:40:24.308+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 1824
+[2025-12-16T16:40:24.336+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1824, status='terminated', exitcode=<Negsignal.SIGTERM: -15>, started='16:40:23') (1824) terminated with exit code -15
+[2025-12-16T16:40:24.339+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 143
+[2025-12-16T16:40:24.420+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

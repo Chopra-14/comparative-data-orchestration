@@ -1,0 +1,116 @@
+[2025-12-16T16:36:23.453+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [queued]>
+[2025-12-16T16:36:23.467+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [queued]>
+[2025-12-16T16:36:23.469+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-16T16:36:23.489+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): extract> on 2024-07-07 00:00:00+00:00
+[2025-12-16T16:36:23.499+0000] {standard_task_runner.py:60} INFO - Started process 710 to run task
+[2025-12-16T16:36:23.505+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'extract', 'scheduled__2024-07-07T00:00:00+00:00', '--job-id', '556', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp3zohr4aq']
+[2025-12-16T16:36:23.509+0000] {standard_task_runner.py:88} INFO - Job 556: Subtask extract
+[2025-12-16T16:36:23.643+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [running]> on host 02b83863a69a
+[2025-12-16T16:36:23.794+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2024-07-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-07T00:00:00+00:00'
+[2025-12-16T16:36:23.798+0000] {logging_mixin.py:188} INFO - Extracting data from /opt/***/data/input.csv
+[2025-12-16T16:36:23.809+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_logic/pipeline.py", line 97, in extract_data
+    df = pd.read_csv(input_path)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/data/input.csv'
+[2025-12-16T16:36:23.847+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_***, task_id=extract, execution_date=20240707T000000, start_date=20251216T163623, end_date=20251216T163623
+[2025-12-16T16:36:23.866+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 556 for task extract ([Errno 2] No such file or directory: '/opt/airflow/data/input.csv'; 710)
+[2025-12-16T16:36:23.922+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-16T16:36:23.993+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-17T01:53:30.802+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [queued]>
+[2025-12-17T01:53:30.821+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [queued]>
+[2025-12-17T01:53:30.822+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-17T01:53:30.867+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): extract> on 2024-07-07 00:00:00+00:00
+[2025-12-17T01:53:30.876+0000] {standard_task_runner.py:60} INFO - Started process 2050 to run task
+[2025-12-17T01:53:30.881+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'extract', 'scheduled__2024-07-07T00:00:00+00:00', '--job-id', '578', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpsm8orrew']
+[2025-12-17T01:53:30.886+0000] {standard_task_runner.py:88} INFO - Job 578: Subtask extract
+[2025-12-17T01:53:31.018+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [running]> on host 571e042550da
+[2025-12-17T01:53:31.430+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2024-07-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-07T00:00:00+00:00'
+[2025-12-17T01:53:31.432+0000] {logging_mixin.py:188} INFO - [EXTRACT] Reading /opt/***/data/synthetic_events.csv
+[2025-12-17T01:53:31.464+0000] {logging_mixin.py:188} INFO - [EXTRACT] done
+[2025-12-17T01:53:31.466+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-12-17T01:53:31.486+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_***, task_id=extract, execution_date=20240707T000000, start_date=20251217T015330, end_date=20251217T015331
+[2025-12-17T01:53:31.700+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-17T01:53:31.764+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-17T04:21:09.148+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [queued]>
+[2025-12-17T04:21:09.164+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [queued]>
+[2025-12-17T04:21:09.170+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-17T04:21:09.191+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): extract> on 2024-07-07 00:00:00+00:00
+[2025-12-17T04:21:09.200+0000] {standard_task_runner.py:60} INFO - Started process 1199 to run task
+[2025-12-17T04:21:09.207+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'extract', 'scheduled__2024-07-07T00:00:00+00:00', '--job-id', '300', '--raw', '--subdir', 'DAGS_FOLDER/etl_***.py', '--cfg-path', '/tmp/tmp5g1iy0bp']
+[2025-12-17T04:21:09.210+0000] {standard_task_runner.py:88} INFO - Job 300: Subtask extract
+[2025-12-17T04:21:09.317+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [running]> on host c5811fe183ca
+[2025-12-17T04:21:09.715+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2024-07-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-07T00:00:00+00:00'
+[2025-12-17T04:21:09.742+0000] {python.py:201} INFO - Done. Returned value was:    user_id event_type           timestamp country
+0        1      login 2025-01-01 09:00:00      IN
+1        1      click 2025-01-01 09:05:00      IN
+2        1     logout 2025-01-01 09:15:00      IN
+3        2      login 2025-01-01 10:00:00      US
+4        2      click 2025-01-01 10:10:00      US
+5        2     logout 2025-01-01 10:20:00      US
+6        3      login 2025-01-02 08:00:00      FR
+7        3      click 2025-01-02 08:05:00      FR
+8        3     logout 2025-01-02 08:30:00      FR
+[2025-12-17T04:21:09.811+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_***, task_id=extract, execution_date=20240707T000000, start_date=20251217T042109, end_date=20251217T042109
+[2025-12-17T04:21:09.981+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-17T04:21:10.014+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-17T04:48:48.914+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [queued]>
+[2025-12-17T04:48:48.930+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [queued]>
+[2025-12-17T04:48:48.931+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-17T04:48:48.956+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): extract> on 2024-07-07 00:00:00+00:00
+[2025-12-17T04:48:48.968+0000] {standard_task_runner.py:60} INFO - Started process 2606 to run task
+[2025-12-17T04:48:49.000+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'extract', 'scheduled__2024-07-07T00:00:00+00:00', '--job-id', '724', '--raw', '--subdir', 'DAGS_FOLDER/etl_***.py', '--cfg-path', '/tmp/tmpll1rpr36']
+[2025-12-17T04:48:49.028+0000] {standard_task_runner.py:88} INFO - Job 724: Subtask extract
+[2025-12-17T04:48:49.268+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [running]> on host b3426f05ac70
+[2025-12-17T04:48:49.622+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2024-07-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-07T00:00:00+00:00'
+[2025-12-17T04:48:49.640+0000] {python.py:201} INFO - Done. Returned value was:    user_id event_type           timestamp country
+0        1      login 2025-01-01 09:00:00      IN
+1        1      click 2025-01-01 09:05:00      IN
+2        1     logout 2025-01-01 09:15:00      IN
+3        2      login 2025-01-01 10:00:00      US
+4        2      click 2025-01-01 10:10:00      US
+5        2     logout 2025-01-01 10:20:00      US
+6        3      login 2025-01-02 08:00:00      FR
+7        3      click 2025-01-02 08:05:00      FR
+8        3     logout 2025-01-02 08:30:00      FR
+[2025-12-17T04:48:49.706+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_***, task_id=extract, execution_date=20240707T000000, start_date=20251217T044848, end_date=20251217T044849
+[2025-12-17T04:48:49.883+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-17T04:48:49.942+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-12-17T07:42:26.168+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [queued]>
+[2025-12-17T07:42:26.212+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [queued]>
+[2025-12-17T07:42:26.220+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-17T07:42:26.285+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): extract> on 2024-07-07 00:00:00+00:00
+[2025-12-17T07:42:26.305+0000] {standard_task_runner.py:60} INFO - Started process 2684 to run task
+[2025-12-17T07:42:26.333+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'extract', 'scheduled__2024-07-07T00:00:00+00:00', '--job-id', '728', '--raw', '--subdir', 'DAGS_FOLDER/etl_***.py', '--cfg-path', '/tmp/tmpd44fpmp7']
+[2025-12-17T07:42:26.346+0000] {standard_task_runner.py:88} INFO - Job 728: Subtask extract
+[2025-12-17T07:42:26.579+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.extract scheduled__2024-07-07T00:00:00+00:00 [running]> on host 2a0de06c8905
+[2025-12-17T07:42:27.007+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2024-07-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-07T00:00:00+00:00'
+[2025-12-17T07:42:27.030+0000] {python.py:201} INFO - Done. Returned value was:    user_id event_type           timestamp country
+0        1      login 2025-01-01 09:00:00      IN
+1        1      click 2025-01-01 09:05:00      IN
+2        1     logout 2025-01-01 09:15:00      IN
+3        2      login 2025-01-01 10:00:00      US
+4        2      click 2025-01-01 10:10:00      US
+5        2     logout 2025-01-01 10:20:00      US
+6        3      login 2025-01-02 08:00:00      FR
+7        3      click 2025-01-02 08:05:00      FR
+8        3     logout 2025-01-02 08:30:00      FR
+[2025-12-17T07:42:27.093+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_***, task_id=extract, execution_date=20240707T000000, start_date=20251217T074226, end_date=20251217T074227
+[2025-12-17T07:42:27.155+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-17T07:42:27.499+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,85 @@
+[2025-12-16T17:12:15.470+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.load scheduled__2024-06-21T00:00:00+00:00 [queued]>
+[2025-12-16T17:12:15.527+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.load scheduled__2024-06-21T00:00:00+00:00 [queued]>
+[2025-12-16T17:12:15.539+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-16T17:12:15.595+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load> on 2024-06-21 00:00:00+00:00
+[2025-12-16T17:12:15.605+0000] {standard_task_runner.py:60} INFO - Started process 2012 to run task
+[2025-12-16T17:12:15.622+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'load', 'scheduled__2024-06-21T00:00:00+00:00', '--job-id', '4139', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp91aqfjam']
+[2025-12-16T17:12:15.636+0000] {standard_task_runner.py:88} INFO - Job 4139: Subtask load
+[2025-12-16T17:12:15.802+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.load scheduled__2024-06-21T00:00:00+00:00 [running]> on host 3b89cfee50e9
+[2025-12-16T17:12:16.052+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-06-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-21T00:00:00+00:00'
+[2025-12-16T17:12:16.060+0000] {logging_mixin.py:188} INFO - [LOAD]
+[2025-12-16T17:12:16.284+0000] {local_task_job_runner.py:121} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-12-16T17:12:16.308+0000] {process_utils.py:131} INFO - Sending 15 to group 2012. PIDs of all processes in the group: [2012]
+[2025-12-16T17:12:16.311+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 2012
+[2025-12-16T17:12:16.448+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-12-16T17:12:16.489+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/etl_logic/pipeline.py", line 126, in load_data
+    print(df.head())
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 1094, in __repr__
+    return self.to_string(**repr_params)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 1271, in to_string
+    return fmt.DataFrameRenderer(formatter).to_string(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/format.py", line 1134, in to_string
+    string = string_formatter.to_string()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/string.py", line 30, in to_string
+    text = self._get_string_representation()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/string.py", line 45, in _get_string_representation
+    strcols = self._get_strcols()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/string.py", line 36, in _get_strcols
+    strcols = self.fmt.get_strcols()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/format.py", line 615, in get_strcols
+    strcols = self._get_strcols_without_index()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/format.py", line 881, in _get_strcols_without_index
+    fmt_values = self.format_col(i)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/format.py", line 896, in format_col
+    frame.iloc[:, i]._values,
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexing.py", line 1097, in __getitem__
+    return self._getitem_tuple(key)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexing.py", line 1596, in _getitem_tuple
+    return self._getitem_lowerdim(tup)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexing.py", line 1000, in _getitem_lowerdim
+    section = self._getitem_axis(key, axis=i)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexing.py", line 1658, in _getitem_axis
+    return self.obj._ixs(key, axis=axis)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 3667, in _ixs
+    result = self._box_col_values(col_mgr, i)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 4235, in _box_col_values
+    return klass(values, name=name, fastpath=True).__finalize__(self)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 5952, in __finalize__
+    for name in other.attrs:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-12-16T17:12:16.616+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_***, task_id=load, execution_date=20240621T000000, start_date=20251216T171215, end_date=20251216T171216
+[2025-12-16T17:12:16.644+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 4139 for task load (Task received SIGTERM signal; 2012)
+[2025-12-16T17:12:16.683+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=2012, status='terminated', exitcode=1, started='17:12:14') (2012) terminated with exit code 1
+[2025-12-16T17:12:16.686+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 143
+[2025-12-16T17:12:16.716+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-17T01:53:15.315+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.load scheduled__2024-06-21T00:00:00+00:00 [queued]>
+[2025-12-17T01:53:15.349+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.load scheduled__2024-06-21T00:00:00+00:00 [queued]>
+[2025-12-17T01:53:15.367+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2025-12-17T01:53:15.402+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): load> on 2024-06-21 00:00:00+00:00
+[2025-12-17T01:53:15.414+0000] {standard_task_runner.py:60} INFO - Started process 1919 to run task
+[2025-12-17T01:53:15.425+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'load', 'scheduled__2024-06-21T00:00:00+00:00', '--job-id', '541', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp1ukpmmli']
+[2025-12-17T01:53:15.430+0000] {standard_task_runner.py:88} INFO - Job 541: Subtask load
+[2025-12-17T01:53:15.610+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.load scheduled__2024-06-21T00:00:00+00:00 [running]> on host 571e042550da
+[2025-12-17T01:53:16.098+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-06-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-06-21T00:00:00+00:00'
+[2025-12-17T01:53:16.102+0000] {logging_mixin.py:188} INFO - [LOAD]
+[2025-12-17T01:53:16.135+0000] {logging_mixin.py:188} INFO -    user_id event_type            timestamp country
+0        1      login  2025-01-01T09:00:00      IN
+1        1      click  2025-01-01T09:05:00      IN
+2        1     logout  2025-01-01T09:15:00      IN
+3        3      login  2025-01-02T08:00:00      FR
+4        3      click  2025-01-02T08:05:00      FR
+[2025-12-17T01:53:16.137+0000] {logging_mixin.py:188} INFO - [LOAD] done
+[2025-12-17T01:53:16.138+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-12-17T01:53:16.159+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_***, task_id=load, execution_date=20240621T000000, start_date=20251217T015315, end_date=20251217T015316
+[2025-12-17T01:53:16.203+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-12-17T01:53:16.232+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

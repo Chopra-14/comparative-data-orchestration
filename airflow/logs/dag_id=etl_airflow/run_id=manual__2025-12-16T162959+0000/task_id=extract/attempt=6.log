@@ -1,0 +1,25 @@
+[2025-12-16T17:18:11.865+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_airflow.extract manual__2025-12-16T16:29:59+00:00 [queued]>
+[2025-12-16T17:18:11.892+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_airflow.extract manual__2025-12-16T16:29:59+00:00 [queued]>
+[2025-12-16T17:18:11.894+0000] {taskinstance.py:2170} INFO - Starting attempt 6 of 8
+[2025-12-16T17:18:11.954+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): extract> on 2025-12-16 16:29:59+00:00
+[2025-12-16T17:18:11.970+0000] {standard_task_runner.py:60} INFO - Started process 3425 to run task
+[2025-12-16T17:18:11.981+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_***', 'extract', 'manual__2025-12-16T16:29:59+00:00', '--job-id', '5161', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpwhnj78oi']
+[2025-12-16T17:18:11.987+0000] {standard_task_runner.py:88} INFO - Job 5161: Subtask extract
+[2025-12-16T17:18:12.161+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_airflow.extract manual__2025-12-16T16:29:59+00:00 [running]> on host 3b89cfee50e9
+[2025-12-16T17:18:12.410+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_***' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2025-12-16T16:29:59+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-16T16:29:59+00:00'
+[2025-12-16T17:18:12.414+0000] {logging_mixin.py:188} INFO - [EXTRACT] Reading /opt/***/data/input.csv
+[2025-12-16T17:18:12.417+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/etl_logic/pipeline.py", line 100, in extract_data
+    raise FileNotFoundError(f"{input_path} not found")
+FileNotFoundError: /opt/***/data/input.csv not found
+[2025-12-16T17:18:12.473+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_***, task_id=extract, execution_date=20251216T162959, start_date=20251216T171811, end_date=20251216T171812
+[2025-12-16T17:18:12.503+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 5161 for task extract (/opt/***/data/input.csv not found; 3425)
+[2025-12-16T17:18:12.536+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-12-16T17:18:12.587+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

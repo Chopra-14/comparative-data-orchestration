@@ -1,0 +1,7 @@
+user_id,event_type,timestamp,country
+1,login,2025-01-01T09:00:00,IN
+1,click,2025-01-01T09:05:00,IN
+1,logout,2025-01-01T09:15:00,IN
+3,login,2025-01-02T08:00:00,FR
+3,click,2025-01-02T08:05:00,FR
+3,logout,2025-01-02T08:30:00,FR
