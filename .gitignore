@@ -9,3 +9,6 @@ dagster/*.db
 
 # Airflow logs
 airflow/logs/
+
+.tmp_dagster_home_*/
+*.db
